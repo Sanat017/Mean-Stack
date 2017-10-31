@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <title>Information</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+   <div class="container" ng-controller="AppCtrl">
+    <h1>Information</h1>
+     <table class="table table-striped table-hover ">
+       <thead>
+       <tr>
+         <th>Name</th>
+         <th>RollNo</th>
+         <th>Email</th>
+         <th>Address</th>
+         <th>College</th>
+           <th>Action</th>
+           <th>&nbsp;</th>
+       </tr>
+       </thead>
+       <tbody>
+               <tr>
+                   <td><input class="form-control" ng-model="information.name"></td>
+                   <td><input class="form-control" ng-model="information.roll"></td>
+                   <td><input class="form-control" ng-model="information.email"></td>
+                   <td><input class="form-control" ng-model="information.address"></td>
+                   <td><input class="form-control" ng-model="information.college"></td>
+                   <td><button class="btn btn-primary" ng-click="addInfo()">Adduser</button></td>
+                   <td><button class="btn btn-warning" ng-click="update()">Update</button></td>
+               </tr>
+             <tr ng-repeat="information in info">
+               <td>{{information.name}}</td>
+               <td>{{information.roll}}</td>
+               <td>{{information.email}}</td>
+               <td>{{information.address}}</td>
+               <td>{{information.college}}</td>
+                 <td><button class="btn btn-danger" ng-click="remove(information._id)">Remove</button></td>
+                 <td><button class="btn btn-warning" ng-click="edit(information._id)">Edit</button></td>
+             </tr>
+       </tbody>
+     </table>
+   </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="controllers/controler.js"></script>
+  </body>
+</html>
