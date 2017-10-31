@@ -7,7 +7,6 @@ const port=3000;
 const app= express();
 
 app.use(express.static(__dirname + "/public"));
-app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.get('/informationlist',function(req,res){
     db.users.find(function(err,info){
